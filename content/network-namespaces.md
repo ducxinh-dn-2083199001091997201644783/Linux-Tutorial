@@ -1,7 +1,7 @@
-###Linux Network Namespaces
+### Linux Network Namespaces
 Dedicated networking devices use Virtual Routing and Forwarding (VRF), meaning that more than one virtual router (Layer 3 forwarding instance) can be run on the same physical device. In the Linux virtual networking space, the network namespaces allow separate instances of network interfaces and routing tables to operate independent of each other.
 
-####Basic operations on namespaces
+#### Basic operations on namespaces
 In Linux, yust be root for all operations which change the configuration of the network stack.
 
 Creating a network namespace
@@ -59,7 +59,7 @@ Delete the namespace
     [root@centos-01 ~]# ip netns list
     Blue
 
-####Add interfaces to network namespaces
+#### Add interfaces to network namespaces
 To connect a network namespace to the outside world, attach a virtual interface to the “default” or “global” namespace where physical interfaces exist. To accomplish this, let's to create a couple of virtual interfaces, called ``vetha`` and ``vethb``
 
     [root@centos-01 ~]# ip link add vetha type veth peer name vethb
