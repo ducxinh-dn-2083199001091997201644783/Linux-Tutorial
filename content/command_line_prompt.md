@@ -1,4 +1,4 @@
-## Modifying the Command Line Prompt
+## Modify the Command Line Prompt
 The PS1 variable is the character string that is displayed as the prompt on the command line. Most distributions set PS1 to a known default value, for example, the user and the hostname as in:
 ```
 [root@caldera01 ~]#
