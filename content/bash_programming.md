@@ -1,4 +1,4 @@
-###Bash shell programming
+## Bash shell programming
 The **shell** is a command line interpreter which provides the user interface for terminal windows. It can also be used to run scripts, even in non-interactive sessions without a terminal window, as if the commands were being directly typed in.
 ```
 #!/bin/bash
@@ -58,7 +58,7 @@ cat: names: No such file or directory
 1
 ```
 
-###Basic syntax
+### Basic syntax
 Scripts require you to follow a standard language syntax. Rules delineate how to define variables and how to construct and format allowed statements, etc. The table lists some special character usages within bash scripts:
 
 |Character|Description|
@@ -84,7 +84,7 @@ $ cat file1 || cat file2 || cat file3
 ```
 In this case, you proceed until something succeeds and then you stop executing any further steps.
 
-###Functions
+### Functions
 A function is a code block that implements a set of operations. Functions are useful for executing procedures multiple times perhaps with varying input variables. Functions are also often called subroutines. Using functions in scripts requires two steps:
 
 1. Declaring a function
@@ -123,7 +123,7 @@ All of the arguments passed from the command line are : A B C
 All done with ./script.sh
 ```
 
-###Command substitution
+### Command substitution
 You may need to substitute the result of a command as a portion of another command. It can be done in two ways:
 
 1. By enclosing the inner command with backticks (`)
@@ -141,7 +141,7 @@ The  /var/log/messages  contains  114  lines.
 ```
 In the above example, the output of the inner command becomes the argument for the outer command.
 
-###The if statement
+### The if statement
 Conditional decision making using an if statement, is a basic construct that any useful programming or scripting language must have. When an if statement is used, the ensuing actions depend on the evaluation of specified conditions such as:
 
 *. Numerical or string comparisons
