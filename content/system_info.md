@@ -1,4 +1,4 @@
-###Linux release and system info
+### Linux release and system info
 Linux System Administrators need to get info from the system. Here some useful commands.
 
 Linux release and distribution
@@ -54,7 +54,7 @@ Count the number of CPU
       2 model name      : Intel(R) Core(TM)2 Duo CPU     E8500  @ 3.16GHz
 ```
 
-###The proc Filesystem
+### The proc Filesystem
 The ``/proc`` filesystem contains virtual files that exist only in memory. This filesystem contains files and directories that mimic kernel structures and configuration information. It doesn't contain real files but runtime system information (e.g. system memory, devices mounted, hardware configuration, etc). Some important files in ``/proc`` are:
 
 ```
@@ -69,7 +69,7 @@ The ``/proc`` filesystem contains virtual files that exist only in memory. This 
 ```
 The ``/proc`` filesystem is very useful because the information it reports is gathered only as needed and never needs storage on disk.
 
-###Hostname
+### Hostname
 The hostname identifies the machine within the domain.
 ```
 # cat /etc/hostname
