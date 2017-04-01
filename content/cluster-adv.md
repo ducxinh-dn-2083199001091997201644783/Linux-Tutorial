@@ -1,4 +1,4 @@
-###Advanced Clustering
+## Advanced Clustering
 Linux Clastering includes many advanced techniques to cover all types of Cluster. In the section [Cluster Basics](https://github.com/kalise/Linux-Tutorial/blob/master/content/cluster-basics.md) we setup a simple Active/Standby cluster. In this section, we are going to extend our Cluster to become an Active/Active cluster.
 
 In an Active/Standby cluster, the standby node is doing nothing for most of the time. Since we do not have shared data between the two nodes, there is no risk of data corruption. The second node can partecipate to the cluster task becoming an active member and improving the performances of the whole cluster. To achieve this goals, we make the HTTP Server running on both the nodes and installing a Load Balancer on both the nodes to distribute the client's requests in a Round Robin fashion.
