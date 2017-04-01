@@ -19,7 +19,7 @@ If which does not find the program, whereis is a good alternative because it loo
 $ whereis diff
 diff: /usr/bin/diff /usr/share/man/man1/diff.1.gz
 ```
-###Accessing Directories
+### Accessing Directories
 The following commands are useful for directory navigation:
 
 |Command|Result|
@@ -29,7 +29,7 @@ The following commands are useful for directory navigation:
 |cd - |Change to previous directory|
 |cd /	|Changes your current directory to the root (/) directory|
 
-###Exploring the Filesystem
+### Exploring the Filesystem
 The tree command is a good way to get a bird’s-eye view of the filesystem tree. The following commands can help in exploring the filesystem:
 
 |Command|Result|
@@ -39,7 +39,7 @@ The tree command is a good way to get a bird’s-eye view of the filesystem tree
 |tree   |Displays a tree view of the filesystem|
 |tree -d|Just list the directories and suppress listing file names|
 
-###Hard and Symbolic Links
+### Hard and Symbolic Links
 The ``ln`` command can be used to create hard links and or soft links, also known as symbolic links or symlinks. These two kinds of links are very common in UNIX-based operating systems.
 
 Suppose that file1.txt already exists. A hard link, called file2.txt, is created with the command:
