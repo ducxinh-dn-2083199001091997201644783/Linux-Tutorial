@@ -1,4 +1,4 @@
-###Filesystem Structure
+### Filesystem Structure
 On many systems, including Linux, the **filesystem** is structured like a tree. The tree is usually portrayed as inverted, and starts at what is most often called the **root** directory, which marks the beginning of the hierarchical filesystem and is also denoted by **/**.
 
 The Filesystem Hierarchy Standard (**FHS**) grew out of historical standards from early versions of UNIX. The FHS provides Linux developers and system administrators with a standard directory structure for the filesystem, which provides consistency between systems and distributions. Linux supports various filesystem types created for Linux, along with compatible filesystems from other operating systems. Many older, legacy filesystems are supported. Some examples of filesystem types that Linux supports are:
@@ -37,13 +37,13 @@ tmpfs                      tmpfs     1.9G     0  1.9G   0% /sys/fs/cgroup
 /dev/mapper/os-data        xfs        20G  261M   20G   2% /data
 ```
 
-###The home directories
+### The home directories
 In any UNIX system, each user has his own home directory, usually placed under ``/home``. The ``/root`` directory on modern Linux systems is no more than the root user's home directory. The ``/home`` directory is often mounted as a separate filesystem on its own partition, or even exported remotely on a network through NFS.
 
-###The binary directories
+### The binary directories
 The ``/bin`` directory contains executable binaries, essential commands used in single-user mode, and essential commands required by all system users, such as ``ps``, ``ls``, ``cp``. Commands that are not essential for the system in single-user mode are placed in the ``/usr/bin`` directory, while the ``/sbin`` directory is used for essential binaries related to system administration, such as ``ifconfig`` and ``shutdown``. There is also a ``/usr/sbin`` directory for less essential system administration programs. All the binary directories are under the root partition. Sometimes ``/usr`` is a separate filesystem that may not be available in single-user mode. This was why essential commands were separated from non-essential commands. However, in some of the most modern Linux systems this distinction is considered obsolete, and ``/usr/bin`` and ``/bin`` are actually just linked together as are ``/usr/sbin`` and ``/sbin``.
 
-###The device directory
+### The device directory
 The ``/dev`` directory contains device nodes, a type of pseudo-file used by most hardware and software devices, except for network devices. This directory is empty on the disk partition when it is not mounted but it contains entries which are created by the ``udev`` system, which creates and manages device nodes on Linux, creating them dynamically when devices are found. The ``/dev`` directory contains items such as:
 ```
 /dev/sda1
@@ -51,7 +51,7 @@ The ``/dev`` directory contains device nodes, a type of pseudo-file used by most
 /dev/dvd1
 ```
 
-###The variable directory
+### The variable directory
 The ``/var`` directory contains files that are expected to change in size and content as the system is running (var stands for variable) such as the entries in the following directories:
 
 * System log files: ``/var/log``
@@ -63,10 +63,10 @@ The ``/var`` directory contains files that are expected to change in size and co
 
 The ``/var`` directory may be put in its own partition so that growth of the files can be accommodated and the file sizes do not fatally affect the system.
 
-###The system configuration directory
+### The system configuration directory
 The ``/etc`` directory is the home for system configuration files. It contains no binary programs, although there are some executable scripts. For example, the file ``resolv.conf`` tells the system where to go on the network to obtain host name to IP address mappings (DNS). Files like ``passwd``, ``shadow`` and ``group`` for managing user accounts are found in the ``/etc`` directory. System run level scripts are found in subdirectories of ``/etc``. For example, ``/etc/rc2.d`` contains links to scripts for entering and leaving run level 2. Some Linux distributions extend the contents of ``/etc``. For example, **Red Hat** adds the ``/etc/sysconfig`` subdirectory that contains more configuration files.
 
-###The boot directory
+### The boot directory
 The ``/boot`` directory contains the few essential files needed to boot the system. For every alternative kernel installed on the system there are four files:
 
 * ``vmlinuz`` is the compressed Linux kernel, required for booting
@@ -76,10 +76,10 @@ The ``/boot`` directory contains the few essential files needed to boot the syst
 
 Each of these files has a kernel version appended to its name.
 
-###The libraries directory
+### The libraries directory
 The ``/lib`` contains libraries (common code shared by applications and needed for them to run) for the essential programs in ``/bin`` and ``/sbin`` folders. Most of these are what are known as dynamically loaded libraries (also known as shared libraries or Shared Objects (SO)). On some Linux distributions there exists a ``/lib64`` directory containing 64-bit libraries, while ``/lib`` contains 32-bit versions. Kernel modules (kernel code, often device drivers, that can be loaded and unloaded without re-starting the system) are located in ``/lib/modules/``.
 
-###Additional directories
+### Additional directories
 
 |Directory|Usage|
 |---------|-----|
@@ -96,6 +96,6 @@ The ``/lib`` contains libraries (common code shared by applications and needed f
 | /usr/src | Source code, usually for the Linux kernel |
 | /usr/local | Data and programs specific to the local machine. |
 
-###File System Table
+### File System Table
 for details on the file system table, i.e. the ``/etc/fstab`` file, please see [fstab (Italian)](https://wiki.archlinux.org/index.php/Fstab_%28Italiano%29#Dischi_esterni)
 
