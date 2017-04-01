@@ -1,11 +1,11 @@
-###Text commands
+## Text commands
 Linux provides utilities for file and text manipulation:
 
 1. Display contents using ``cat`` and ``echo``. 
 2. Edit file contents using ``sed`` and ``awk``.
 3. Search for patterns using ``grep``.
 
-###Display contents
+### Display contents
 The ``cat`` is short for concatenate and is often used to read and print files as well as for simply viewing file contents, while the ``tac`` command prints the lines of a file in reverse order.
 ```
 $ cat > myfile.txt
@@ -32,7 +32,7 @@ HOME
 $ echo $HOME
 /home/ec2-user
 ```
-###Edit file content
+### Edit file content
 The command ``sed`` is a powerful text processing tool. Its name is an abbreviation for stream editor. It filters text as well as perform substitutions in data streams. Data from an input source/file (or stream) is taken and moved to a working space. The entire list of operations/modifications is applied over the data in the working space and the final contents are moved to the standard output space (or stream).
 ```
 $ sed s/Mario/Saverio/ myfile.txt
@@ -79,7 +79,7 @@ Laforca
 ```
 Please, check the man pages for the ``awk`` and ``sed`` commands for futher details.
 
-###File manipulation
+### File manipulation
 The ``sort`` command is used to rearrange the lines of a text file either in ascending or descending order, according to a sort key.
 ```
 # cat myfile.txt
