@@ -1,4 +1,4 @@
-###Backup the data
+### Backup the data
 The ``rsync`` command is used to synchronize entire directory trees. Basically, it copies file as the ``cp`` command does. In addition, ``rsync`` checks if the file being copied already exists. If the file exists and there is no change in size or modification time, ``rsync`` will avoid an unnecessary copy and save time. Furthermore, because rsync copies only the parts of files that have actually changed, it can be very fast.
 
 The ``rsync`` is very efficient when recursively copying one directory tree via network, because only the differences are transmitted. One often synchronizes the destination directory tree with the origin, using the  ``rsync -r`` option to recursively walk down the directory tree copying all files and directories below the one listed as the source.
@@ -17,7 +17,7 @@ total size is 452  speedup is 0.62
 
 ```
 
-###Compress the data
+### Compress the data
 File data is often compressed to save disk space and reduce the time it takes to transmit files over networks. Linux uses a number of methods to perform this compression.
 
 |Command|Usage|
@@ -29,7 +29,7 @@ File data is often compressed to save disk space and reduce the time it takes to
 
 These techniques vary in the efficiency of the compression (how much space is saved) and in how long they take to compress; generally the more efficient techniques take longer. Decompression time doesn't vary as much across different methods.
 
-###Archiving data
+### Archiving data
 The ``tar`` command allows you to create or extract files from an archive file, often called a tarball. At the same time you can optionally compress while creating the archive, and decompress while extracting its contents.
 
 Here are some examples of the use of tar:
