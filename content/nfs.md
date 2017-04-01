@@ -1,4 +1,4 @@
-###Network Filesystem
+## Network Filesystem
 Using **NFS** (the Network File System) is one of the methods used for sharing data across physical systems. Many system administrators mount remote users' home directories on a server in order to give them access to the same files and configuration files across multiple client systems. This allows the users to log in to different machines yet still have access to the same files and resources.
 
 On a generic Linux distribution, the NFS server daemon is typically started with the command ``service nfs start``. The file ``/etc/exports`` contains the directories and permissions that a host is willing to share with other systems over NFS. An entry in this file may look like ``/shared *(rw)``. This entry allows the directory ``/shared`` to be mounted using NFS with read and write (rw) permissions and shared with other hosts in the same domain. After modifying the ``/etc/exports`` file, you can use the ``exportfs -av`` command to notify Linux about the directories you are allowing to be remotely mounted using NFS.
