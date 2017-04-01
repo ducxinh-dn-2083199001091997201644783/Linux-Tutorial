@@ -1,4 +1,4 @@
-###Linux Virtual Networking
+## Linux Virtual Networking
 Linux virtual networking is made easy by libvirt and linux virtual bridge. See [libvirt Virtual Networking](http://wiki.libvirt.org/page/VirtualNetworking).
 
 Install, start and enable the libvirt
@@ -15,7 +15,7 @@ The libvirt supports following type of virtual networking:
 3. Isolated mode
 4. Bridged Mode
 
-####Virtual Networking in NAT Mode
+#### Virtual Networking in NAT Mode
 When the libvirt daemon is first installed on a server, it comes with an initial default virtual network switch configuration. This default virtual switch is in NAT mode, and is used by installed Virtual Machines for communication to the outside network through the host physical machine. The configuration is stored in the XML file ``/etc/libvirt/qemu/networks/default.xml``. A ``virbr0`` interface is also created on the host machine.
 ```
 # cat /etc/libvirt/qemu/networks/default.xml
@@ -418,7 +418,7 @@ Domain VM2 started
  8     VM2                            running
 ```
 
-###Virtual Networking in Routed Mode
+### Virtual Networking in Routed Mode
 Routed mode is a variation of the virtual networking with NAT mode. In routing mode, the ``virbr0`` interface acts as routing interface without NAT. The DHCP can be enabled or not, depending on the requirements.
 
 Create the envinronment for the routed virtual networking
@@ -477,7 +477,7 @@ Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
 
 The VMs must be created with static IP address in the same network of the ``virbr1`` and default gateway the same interface. Since no NAT is performed by the virtual networking, make sure the network env is aware of the new network (e.g. put static routes).
 
-###Spawning multiple hosts
+### Spawning multiple hosts
 Linux virtual networking can spawn multiple hosts. Let to build a virtual networking setup of two hosts whith several VMs running on both. Only one host has a network interface connected to internet, and so it acts as a NAT gateway for both the hosts. The two hosts are bridged togeter using a secondary network interface.
 
 ```
