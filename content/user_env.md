@@ -1,4 +1,4 @@
-###Users and Groups
+### Users and Groups
 Linux is a multiuser operating system where more than one user can log on at the same time. The ``who`` command lists the currently logged-on users. To identify the current user, use the ``whoami`` command.
 
 ```
@@ -89,7 +89,7 @@ All these commands update the ``/etc/group`` as necessary. The ``groupmod`` comm
 adriano : newgoupname
 ```
 
-###The root user
+### The root user
 The **root** account is very powerful and has full access to the system. Other operating systems often call this the administrator account; in Linux it is often called the **superuser** account. You must be extremely cautious before granting full root access to a user; it is rarely if ever justified. External attacks often consist of tricks used to elevate to the root account. However, you can use the sudo feature to assign more limited privileges to standard user accounts:
 
 1. on only a temporary basis.
@@ -97,7 +97,7 @@ The **root** account is very powerful and has full access to the system. Other o
 
 When assigning elevated privileges, you can use the command ``su`` (switch user) to launch a new shell running as another user (you must type the password of the user you are becoming). Most often this other user is root, and the new shell allows the use of elevated privileges until it is exited. It is almost always a bad (dangerous for both security and stability) practice to use ``su`` to become root. Resulting errors can include deletion of vital files from the system and security breaches.
 
-###Startup Files
+### Startup Files
 In Linux, the command shell program, generally **bash** uses one or more startup files to configure the environment. Files in the ``/etc`` directory define global settings for all users while the initialization files in the user's home directory can include and or override the global settings. The startup files can do anything the user would like to do in every command shell, such as:
 
 * Customizing the user's prompt
@@ -113,7 +113,7 @@ When you first login to Linux, the  ``/etc/profile`` file is read and evaluated,
 
 The Linux login shell evaluates whatever startup file that it comes across first and ignores the rest. This means that if it finds ``~/.bash_profile``, it ignores the rest. Different distributions may use different startup files. However, every time you create a new shell, or terminal window, etc., you do not perform a full system login; only the ``~/.bashrc`` file is read and evaluated. Although this file is not read and evaluated along with the login shell, most distributions and/or users include the ``~/.bashrc`` file from within one of the three user-owned startup files. In the Ubuntu, openSuse, and CentOS distros, the user must make appropriate changes in the ``~/.bash_profile`` file to include the ``~/.bashrc`` file. The ``~/.bash_profile`` will have certain extra lines, which in turn will collect the required customization parameters from ``~/.bashrc``.
 
-###Environment variables
+### Environment variables
 The environment variables are simply named quantities that have specific values and are understood by the command shell, such as **bash**. Some of these are pre-set by the system, and others are set by the user either at the command line or within startup and other scripts. An environment variable is actually no more than a character string that contains information used by one or more applications. There are a number of ways to view the values of currently set environment variables. All the ``set``, ``env``, or ``export`` commands display the environment variables.
 
 By default, variables created within a script are only available to the current shell. All the child processes (sub-shells) will not have access to values that have been set or modified. Allowing child processes to see the values, requires use of the ``export`` command.
@@ -158,7 +158,7 @@ $ echo $SHELL
 $
 ```
 
-###Command history
+### Command history
 The bash keeps track of previously entered commands and statements in a history buffer; you can recall previously used commands simply by using the Up and Down cursor keys. To view the list of previously executed commands, you can use the ``history`` at the command line. The list of commands is displayed with the most recent command appearing last in the list. This information is stored in ``~/.bash_history`` file. Several associated environment variables can be used to get information about the history file. 
 
 |Variable|Usage|
@@ -177,7 +177,7 @@ The table below shows the syntax used to execute previously used commands
 |!n|Refer to the n-th command line|
 |!string|Refer to the most recent command starting with string|
 
-###Creating Aliases
+### Creating Aliases
 Customized commands can be created to modify the behavior of already existing ones by creating aliases. Most often these aliases are placed in your ``~/.bashrc`` file so they are available to any command shells you create. The ``alias`` command with no arguments will list currently defined aliases.
 
 ```
