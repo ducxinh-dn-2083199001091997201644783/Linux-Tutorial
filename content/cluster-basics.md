@@ -1,4 +1,4 @@
-###Cluster Basics
+## Cluster Basics
 A cluster is two or more computers (cluster members) that work together to perform a task, for example, provide high availability of a given service. High availability clusters provide highly available services by eliminating single points of failure and by failing over services from one cluster member to another in case a node becomes inoperative.
 
 Typically, services in a high availability cluster maintain data integrity as one cluster member takes over control of a service from another cluster member. Node failures in a high availability cluster are not visible from clients outside the cluster.
@@ -11,7 +11,7 @@ In the Linux world, there are many cluster tools to achieve High Availability of
 
 3. **Fencing Manager**: often deployed in conjunction with a power supply switch, this component acts as a cluster resource in Pacemaker that processes fence requests, forcefully powering down nodes and removing them from the cluster to ensure data integrity. Pacemaker use a fencing technique called **STONITH** (Shoot The Other Node In The Head) intended to prevent data corruption caused by faulty nodes in a cluster that are unresponsive but still accessing application data (the so called "Split Brain Scenario").
 
-####Install a simple Cluster
+### Install a simple Cluster
 Pacemaker requires a messaging layer daemon, called **Corosync** that provides a cluster membership and closed communication model for creating replicated state machines, on top of which Pacemaker can run. Corosync can be seen as the underlying system that connects the cluster nodes together, while Pacemaker monitors the cluster and takes action in the event of a failure. In addition, we are going to use **PCS**, a command line interface that interacts with both Corosync and Pacemaker.
 
 This example will be also used to explain the basic concepts of Linux Clustering. 
@@ -190,7 +190,7 @@ Or on all nodes of the cluster
     holly: Stopping Cluster (corosync)...
     [root@holly ~]#
   
-####Add a resource to the Cluster
+### Add a resource to the Cluster
 Lets add a cluster service, we'll choose one doesn't require too much configuration and works everywhere to make things easy.
 
 Install and configure an HTTP Server on both the nodes. Note: not need to start/enable the service.
@@ -271,7 +271,7 @@ and make sure resource will switch to the other node
     [stack@director ~]$ curl http://10.10.10.23
     Hello Holly
 
-####Accessing the cluster management form a Web GUI
+### Accessing the cluster management form a Web GUI
 Cluster management is possible also via a Web GUI. Point the browser to the primary member node and login as the ``hacluster`` user
 
     https://<primary_node_ip>:2224
