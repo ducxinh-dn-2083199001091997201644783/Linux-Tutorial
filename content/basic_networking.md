@@ -1,4 +1,4 @@
-###Network interfaces
+## Network interfaces
 Network interfaces are a connection channel between a device and a network. Physically, network interfaces can proceed through a network interface card (**NIC**) or can be more abstractly implemented as software. You can have multiple network interfaces operating at once. Specific interfaces can be brought up (activated) or brought down (de-activated) at any time. A list of currently active network interfaces is reported by the ``ifconfig`` utility. Network configuration files are essential to ensure that interfaces function correctly.
 
 For **Debian** family configuration, the basic network configuration file is ``/etc/network/interfaces``. For **RedHat** family system configuration, the routing and host information is contained in ``/etc/sysconfig/network``. The network interface configuration script for the ``eth0`` interface is located at ``/etc/sysconfig/network-scripts/ifcfg-eth0``. For **SUSE** family system configuration, the routing and host information and network interface configuration scripts are contained in the ``/etc/sysconfig/network`` directory.
@@ -29,7 +29,7 @@ The ``ip`` is a very powerful program that can do many things.
 # ip route show
 ```
 
-###Routing table
+### Routing table
 The ``route`` command is used to view or change the IP routing table. You may want to change the IP routing table to add, delete or modify static routes to specific hosts or networks.
 
 ```
