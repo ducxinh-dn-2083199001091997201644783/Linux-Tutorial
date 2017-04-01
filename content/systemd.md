@@ -1,4 +1,4 @@
-###System Services
+## System Services
 Systemd is the new init system for modern Linux distributions replacing the old init based on ``/etc/init.d/script``. It provides many powerful features for starting, stopping and managing processes. Here is an example to create a MineCraft service for systemd. MainCraft is a Java based game from Mojang.
 
 First, install the game and its envinronment.
