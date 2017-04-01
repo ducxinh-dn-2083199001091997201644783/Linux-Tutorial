@@ -1,4 +1,4 @@
-###Linux processes
+### Linux processes
 A **process** is simply an instance of one or more related tasks (**threads**) executing on the same machine. It is not the same as a program or a command; a single program may actually start several processes simultaneously. Some processes are independent of each other and others are related. A failure of one process may or may not affect the others running on the system. Processes use many system resources, such as memory, CPU cycles, and peripheral devices such as printers and displays. The operating system (especially the kernel) is responsible for allocating a proper share of these resources to each process and ensuring overall optimum utilization.
 
 A terminal window, is a process that runs as long as needed. It allows users to execute programs and access resources in an interactive environment. You can also run programs in the background, which means they become detached from the shell. Processes can be of different types according to the task being performed. 
@@ -17,7 +17,7 @@ At any given time there are always multiple processes being executed. The operat
 
 At any given time, many processes are running on the system. However, a **CPU** can actually accommodate only one task at a time, just like a car can have only one driver at a time. Some processes are more important than others so Linux allows you to set and manipulate process priority. Higher priority processes are granted more time on the processor. The **priority** for a process can be set by specifying a nice value, or **niceness**, for the process. The lower the nice value, the higher the priority. Low values are assigned to important processes, while high values are assigned to processes that can wait longer. A process with a high nice value simply allows other processes to be executed first. In Linux, a nice value of -20 represents the highest priority and 19 represents the lowest. You can also assign a real-time priority to time-sensitive tasks, such as controlling machines or collecting incoming data. This is just a very high priority and is not to be confused with what is called hard real time which is conceptually different, and has more to do with making sure a job gets completed within a very well-defined time window.
 
-###Running processes
+### Running processes
 The ``ps`` command provides information about currently running processes, keyed by **PID**. If you want a repetitive update of this status, you can use the ``top`` command or commonly installed variants such as ``htop`` or ``atop`` from the command line. The ``ps`` command has many options for specifying exactly which tasks to examine, what information to display about them, and precisely what output format should be used.
 
 Without options ``ps`` will display all processes running under the current shell. You can use the `` ps -u`` to display information of processes for a specified username. The command ``ps -ef`` displays all the processes in the system in full detail. The command ``ps -eLf`` goes one step further and displays one line of information for every thread (a process can contain multiple threads).
@@ -110,7 +110,7 @@ Each line in the process list of the ``top`` output displays information about a
 
 To control the healt of a system, the average load of the system should be checked first. Assuming our system is a single-CPU system, the 0.25 means that for the past minute, on average, the system has been 25% utilized. 0.12 in the next position means that over the past 5 minutes, on average, the system has been 12% utilized; and 0.15 in the final position means that over the past 15 minutes, on average, the system has been 15% utilized. If we saw a value of 1.00 in the second position, that would imply that the single-CPU system was 100% utilized, on average, over the past 5 minutes; this is good if we want to fully use a system. A value over 1.00 for a single-CPU system implies that the system was over-utilized: there were more processes needing CPU than CPU was available. If we had more than one CPU, say a quad-CPU system, we would divide the load average numbers by the number of CPUs. In this case, for example, seeing a 1 minute load average of 4.00 implies that the system as a whole was 100% (4.00/4) utilized during the last minute. Short term increases are usually not a problem. A high peak you see is likely a burst of activity, not a new level. For example, at start up, many processes start and then activity settles down. If a high peak is seen in the 5 and 15 minute load averages, it would may be cause for concern.
 
-###Background and foreground processes
+### Background and foreground processes
 Linux supports **background** and **foreground** job processing. Foreground jobs run directly from the shell, and when one foreground job is running, other jobs need to wait for shell access until it is completed. This is fine when jobs complete quickly. But this can have an adverse effect if the current job is going to take a long time to complete. In such cases, you can run the job in the background and free the shell for other tasks. The background job will be executed at lower priority, which, in turn, will allow smooth execution of the interactive tasks, and you can type other commands in the terminal window while the background job is running. By default all jobs are executed in the foreground. This You can put a job in the background:
 
 ```
@@ -121,7 +121,7 @@ Linux supports **background** and **foreground** job processing. Foreground jobs
 #
 ```
 
-###Scheduling processes
+### Scheduling processes
 The ``at`` utility program is used to execute any non-interactive command at a specified time. The ``at`` jobs is picked by the ``atd`` service.
 ```
 # yum install -y at
@@ -158,7 +158,7 @@ will schedule a job to execute the script every minute of every hour of every da
 ```
 will schedule a full-backup at 8.30am, 10-June irrespective of the day of the week.
 
-###Delaying processes
+### Delaying processes
 Sometimes a command or job must be delayed or suspended. Suppose, for example, an application has read and processed the contents of a data file and then needs to save a report on a backup system. If the backup system is currently busy or not available, the application can be made to sleep until it can complete its work. Such a delay might be to mount the backup device and prepare it for writing. The ``sleep`` command suspends execution for at least the specified period of time, which can be given as the number of seconds (the default), minutes, hours or days. After that time has passed, the execution will resume.
 
 ```
