@@ -1,4 +1,4 @@
-###The file streams
+### The file streams
 When commands are executed, by default there are three standard file streams or descriptors always open for use:
 
 1. standard input or **stdin**
@@ -23,7 +23,7 @@ $ command1 | command2 | command3
 ```
 The above represents what we often call a _pipeline_ and allows linux to combine the actions of several commands into one. 
 
-###Search for files
+### Search for files
 The ``locate`` utility performs a search through a previously constructed database of files and directories on your system, matching all entries that contain a specified character string. The ``locate`` utilizes the database created by another program, ``updatedb``. Most Linux systems run this automatically once a day. However, you can update it at any time by just running ``updatedb`` from the command line as the root user.
 ```
 # yum install -y mlocate
@@ -95,7 +95,7 @@ $ find / -size +10M
 ```
 To find files greater than 10 MB in size.
 
-###Manage files
+### Manage files
 Use the following utilities to view files:
 
 |Command|Usage|
@@ -134,7 +134,7 @@ rmdir: failed to remove ‘test’: Directory not empty
 ls: cannot access ./test: No such file or directory
 ```
 
-###Compare files
+### Compare files
 The ``diff`` command is used to compare files and directories. 
 
 ```
@@ -172,7 +172,7 @@ $
 $  diff -i file1.txt file2.txt
 $ 
 ```
-###The file utility
+### The file utility
 In Linux, a file's extension often does not categorize it the way it might in other operating systems. One can not assume that a file named ``file.txt`` is a text file and not an executable program. In Linux a file name is generally more meaningful to the user of the system than the system itself; in fact most applications directly examine a file's contents to see what kind of object it is rather than relying on an extension. The real nature of a file can be ascertained by using the ``file`` utility. For the file names given as arguments, it examines the contents and certain characteristics to determine whether the files are plain text, shared libraries, executable programs, scripts, or something else.
 
 ```
