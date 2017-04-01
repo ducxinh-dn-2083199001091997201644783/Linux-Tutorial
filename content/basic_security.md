@@ -1,4 +1,4 @@
-###Linux basic security
+## Linux basic security
 By default, Linux has several account types in order to isolate processes and workloads:
 
 1. **root**
@@ -37,7 +37,7 @@ When using the ``sudo`` command:
 * what the user is allowed to do can be precisely controlled and limited; by default the user will either always have to keep giving their password to do further operations with ``sudo``, or can avoid doing so for a configurable time interval
 * detailed logging features are available
 
-###The sudo command
+### The sudo command
 Granting privileges using the ``sudo`` command is less dangerous than ``su`` and it should be preferred. By default, ``sudo`` must be enabled on a per-user basis. However, some distributions (such as Ubuntu) enable it by default for at least one main user, or give this as an installation option. To execute just one command with root privilege type ``sudo <command>``. When the command is complete you will return to being a normal unprivileged user. The ``sudo`` configuration files are stored in the ``/etc/sudoers`` file and in the ``/etc/sudoers.d/`` directory. By default, that directory is empty.
 
 The ``sudo`` command has the ability to keep track of unsuccessful attempts at gaining root access. An authentication failure message would appear in the ``/var/log/secure`` log file  when trying to execute sudo bash without successfully authenticating the user
@@ -82,17 +82,17 @@ If sudo is configured correctly the last line value will be ``root``.
 
 Some Linux distributions prefer you add a file in the directory ``/etc/sudoers.d`` with a name the same as the user. This file contains the individual user's sudo configuration, and one should leave the master configuration file untouched except for changes that affect all users.
 
-###The process isolation
+### The process isolation
 Linux is considered to be more secure than many other operating systems because processes are naturally isolated from each other. One process normally cannot access the resources of another process, even when that process is running with the same user privileges. Additional security mechanisms that have been recently introduced in order to make risks even smaller are:
 
 1. **Control Groups**: allows system administrators to group processes and associate finite resources to each group (**cgroup**).
 2. **Linux Containers**: makes it possible to run multiple isolated Linux systems containers on a single system.
 3. **Virtualization**: hardware is emulated in such a way that not only processes can be isolated, but entire systems are run simultaneously as isolated and insulated guests (**virtual machines**) on one physical host.
 
-###Password encryption
+### Password encryption
 Protecting passwords has become a crucial element of security. Most Linux distributions rely on a modern password encryption algorithm called SHA-512 (Secure Hashing Algorithm 512 bits), developed by the U.S. National Security Agency (NSA) to encrypt passwords. The SHA-512 algorithm is widely used for security applications and protocols. These security applications and protocols include TLS, SSL, PHP, SSH, S/MIME and IPSec. SHA-512 is one of the most tested hashing algorithms.
 
-###Password aging
+### Password aging
 The password aging is a method to ensure that users get prompts that remind them to create a new password after a specific period. This can ensure that passwords, if cracked, will only be usable for a limited amount of time. This feature is implemented using the ``chage`` command, which configures the password expiry information for a user.
 ```
 # chage --list adriano
@@ -105,7 +105,7 @@ Maximum number of days between password change          : 99999
 Number of days of warning before password expires       : 7
 ```
 
-###Public/Private Keys for Authentication
+### Public/Private Keys for Authentication
 Using encrypted keys for authentication offers two main benefits. Firstly, it is convenient as you no longer need to enter a password if you use public/private keys. Secondly, once public/private key pair authentication has been set up on the server, you can disable password authentication completely meaning that without an authorized key you can't gain access.
 
 Create a private key for client and a public key for server to do it
