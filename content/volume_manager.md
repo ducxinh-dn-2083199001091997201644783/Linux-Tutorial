@@ -1,4 +1,4 @@
-###Logical Volume Manager layout
+## Logical Volume Manager layout
 Basically a Logical Volume Manager layout **LVM** looks like this:
 
 * **Logical Volume(s)**: ``/dev/fileserver/share``, ``/dev/fileserver/backup``, ``/dev/fileserver/media``
@@ -11,7 +11,7 @@ With LVM, an hard drive or set of hard drives or different partitions of the sam
 
 The volume groups can be divided into logical volumes, which are assigned mount points, such as ``/home`` and root and file system types, such as **ext2** or **ext3**. When the partitions reach their full capacity, free space from the volume group can be added to the logical volume to increase the size of the partition. When a new hard drive is added to the system, it can be added to the volume group, and partitions that are logical volumes can be increased in size.
 
-###Create a LVM layout
+### Create a LVM layout
 On my local CentOS machine, there is on additional hard drive ``/dev/sdb`` to use for LVM layout.
 ```
 # fdisk /dev/sdb
@@ -126,7 +126,7 @@ After creating the appropriate filesystem on the logical volumes, they become re
 ```
 
 
-###Extend a LVM layout
+### Extend a LVM layout
 On the local CentOS machine, there are 2 hard drive ``/dev/sda`` and ``/dev/sdb``. The ``/dev/sda`` is partioned as follow
 ```
 # fdisk -l /dev/sda
@@ -341,7 +341,7 @@ tmpfs                1.9G     0  1.9G   0% /sys/fs/cgroup
 /dev/sda1            497M  183M  315M  37% /boot
 ```
 
-###Reduce the LVM layout
+### Reduce the LVM layout
 Unfortunally we can NOT make a XFS partition smaller online. The only way to shrink is to do a complete dump of data, make a new smaller volume group and restore the data.
 
 ```
