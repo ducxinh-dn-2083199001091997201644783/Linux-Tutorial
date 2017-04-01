@@ -1,4 +1,4 @@
-###Volume Manager, a real example
+## Volume Manager, a real example
 Let to see, step-by-step, a real example of Volume Manager on a CentOS 7 setup. 
 On the host caldera01 there is an additional disk ``/dev/sdb`` we want to use for store a mysql database.
 
