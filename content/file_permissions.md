@@ -1,4 +1,4 @@
-###File permissions
+### File permissions
 In Linux and other UNIX operating systems, every file is associated with a user who is the owner. Every file is also associated with a group which has an interest in the file and certain rights, or permissions: read, write, and execute.
 
 |Command|Result|
