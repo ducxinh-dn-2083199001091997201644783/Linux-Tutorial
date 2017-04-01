@@ -1,4 +1,4 @@
-####Samba server and Windows file sharing
+## Samba server and Windows file sharing
 Samba is an open source implementation of the SMB/CIFS protocol. It allows the networking of Microsoft Windows®, Linux, UNIX, and other operating systems. Samba allows a Linux/Unix server to appear as a Windows server to Windows clients.
 
 With Samba, an administrator can do:
@@ -16,7 +16,7 @@ The ``nmbd`` server daemon understands and replies to NetBIOS name service reque
 
 The ``winbindd`` service resolves user and group information received from a server running Windows. This makes Windows user and group information understandable by Linux and UNIX platforms. This allows Windows domain users to appear and operate as Linux and UNIX users on a Linux or UNIX machine. Both ``winbindd`` and ``smbd`` are bundled with the Samba distribution, but the ``winbindd`` service is controlled separately from the ``smbd`` service.
 
-####Setup a Samba server
+#### Setup a Samba server
 We'll setup a Samba server to make Linux file sharing available to Windows clients. Install the Samba package, enable and start the ``smbd`` and ``nmbd`` services
 
 ```
@@ -100,7 +100,7 @@ Server role: ROLE_STANDALONE
 Press enter to see a dump of your service definitions
 ```
 
-####User access
+#### User access
 More than one user can be admitted to access the same share. In the case above, the share1 is only accesible to the "admin" user. The share2 is accessible to "admin" and "user2" users but not "user3". The share3 is accessible to "admin" and "user3" to "user2".
 
 **Note:** the connection to shares by the same Windows client needs to use the same user name. In our case, a Windows client can access all the shares above as "admin" but cannot access to share2 as "user2" AND access to share3 as "user3". If the Windows client needs to access with different users, it needs to logout from the previous user and then login again with a different user. Since Windows caches the login user, it needs to force the logout by issuing the command: ``net use * /delete`` from the Windows command shell
@@ -159,7 +159,7 @@ Couldn't read packet: Connection reset by peer
 ```
 Alternatively, you can leave the ssh but should chroot the user's home directory.
 
-####File permissions and attributes
+#### File permissions and attributes
 In our example above, we are going to share Linux files and folders to Windows clients. Since Windows and Linux use different approach to file permissions and attributes, Samba will take care of mapping the two approaches.
 
 All Linux files have read, write, and execute bits for three classifications of users: owner (u), group (g), and rest of the world (o). Windows, on the other hand, has four principal bits that it uses with any file: read-only, system, hidden, and archive:
